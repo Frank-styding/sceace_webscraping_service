@@ -1,1 +1,1 @@
-pip install -r requirements.txt
+pip install --only-binary=all -r requirements.txt

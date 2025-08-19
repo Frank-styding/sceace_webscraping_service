@@ -1,7 +1,7 @@
 from methods import *
-def read_seace(config,words):
+def read_seace(config,words,dev=True):
     url = "https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml"
-    context = setup_driver_with_download_path()
+    context = setup_driver_with_download_path(dev)
     navegate_to(context,url)
     time.sleep(2)
     press_button(context, "Buscador de Procedimientos de Selección",by=By.LINK_TEXT)

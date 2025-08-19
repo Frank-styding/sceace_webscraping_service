@@ -23,7 +23,7 @@ async def find_data(body:FindBody):
         config["keyword"] = body.keyword
     if body.words != None:
         words = body.words
-    return read_seace(config,words)
+    return read_seace(config,words,dev=False)
 
 
 class FindOneBody(BaseModel):
@@ -32,7 +32,7 @@ class FindOneBody(BaseModel):
 
 @app.post("/findOne")
 async def find_data(body: FindOneBody):
-    return get_url_for_items(body.data)
+    return get_url_for_items(body.data,dev=False)
     ##url = read_one(body.code)
     ##if url is None:
     ##    return {"error": True}

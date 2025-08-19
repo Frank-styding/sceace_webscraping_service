@@ -49,9 +49,9 @@ def convert_to_zip():
 
 
 
-def get_url_for_items(data:list[dict]):
+def get_url_for_items(data:list[dict],dev=True):
     url = "https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml"
-    context = setup_driver_with_download_path()
+    context = setup_driver_with_download_path(dev)
     navegate_to(context,url)
     press_button(context, "Buscador de Procedimientos de Selección",by =By.LINK_TEXT)
     time.sleep(1)
